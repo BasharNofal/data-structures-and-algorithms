@@ -147,7 +147,7 @@ const listFoods = (recipe) => {
   let arrOfIndices=[];
 
 for (let i=0; i< recipe.ingredients.length; i++){
-  arrOfIndices.push(recipe.ingredients[i].indexOf(' ',3));
+  arrOfIndices.push((recipe.ingredients[i].indexOf(' ',3))+1);
   result.push(recipe.ingredients[i].slice(arrOfIndices[i]));
 }
   return result;
