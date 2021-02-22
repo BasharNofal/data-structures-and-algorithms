@@ -57,10 +57,10 @@ let characters = [
 const sortByChildren = (charArray) => {
   // Solution code here...
   charArray.sort((a,b)=>{
-    if (a.children.length-b.children.length ) {
+    if ((a.children.length-b.children.length)) {
       return 1;
     }
-    if (b.children.length-a.children.length ) {
+    if ((b.children.length-a.children.length)) {
       return -1;
     }
     charArray.sort((a,b)=>{
@@ -165,11 +165,12 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
+
   Object.values(arr).forEach(property=>{
     if (character === property) {
       return true;
     }
-    return false;
+     return false;
   })
 };
 
