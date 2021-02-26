@@ -57,16 +57,15 @@ let characters = [
 const sortByChildren = (charArray) => {
   // Solution code here...
   charArray.sort((a,b)=>{
-    if ((a.children.length-b.children.length) || []) {
-      return 1;
+    return a.children.length - b.children.length;
+  })  
+  charArray.sort((a,b)=>{
+    if (a.children.length === b.children.length){
+      return b.house - a.house
     }
-    if ((b.children.length-a.children.length) || []) {
-      return -1;
-    }
-    charArray.sort((a,b)=>{
-      return a.name-b.name;
-    })
   })
+  return charArray;
+
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -76,7 +75,8 @@ Write a function named getCourseKeys that takes in the courseInfo object and ret
 
 For example: (['name', 'duration', 'topics', 'finalExam']).
 ------------------------------------------------------------------------------------------------ */
-const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks'},
+const courseInfo = {
+  name: 'Code 301', duration: { dayTrack: '4 weeks', eveningTrack: '8 weeks' },
   topics: ['SMACSS', 'APIs', 'NodeJS', 'SQL', 'jQuery', 'functional programming'],
   finalExam: true
 };
@@ -84,7 +84,7 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 const getCourseKeys = (obj) => {
   // Solution code here...
   let arrOfProperties = [];
-  for (let property in obj){
+  for (let property in obj) {
     arrOfProperties.push(property);
   }
   return arrOfProperties;
@@ -100,13 +100,13 @@ Write a function named checkValues that takes in an object and a value and retur
 
 const checkValues = (obj, value) => {
   // Solution code here...
-  for (let property in obj){
-    if (obj[property]=== value) {
+  for (let property in obj) {
+    if (obj[property] === value) {
       return true;
     }
     return false;
   }
-}
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -129,11 +129,12 @@ HR has asked you to change the data to make it easier to print so that it looks 
 
 const updateNumbers = (obj) => {
   // Solution code here...
-  Object.keys(obj).forEach( property => {
-    console.log(`"${property}: ${obj[property]}"`);
-  })
+  let arr = [];
+  for (let property in obj) {
+    arr.push(`${property}: ${obj[property]}`)
+  }
+  return arr;
 };
-
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -165,15 +166,19 @@ hasChildrenValues(characters, 'Sansa') will return false
 
 const hasChildrenValues = (arr, character) => {
   // Solution code here...
-  let a = []
-  let array = (Object.values(arr))
-  array.forEach(element=>{
-    element.children.forEach(test=>{
-      a.push(test);
-    });
-  });
-return a.includes(character)
-}
+  let result = '';
+  Object.values(arr).forEach(property => {
+    if (character === property.name) {
+      if (property.children.length !== 0) {
+        result = true;
+      } else {
+        result = false;
+      }
+    }
+  })
+  return result;
+};
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
