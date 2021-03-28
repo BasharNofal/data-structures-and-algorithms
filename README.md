@@ -1,15 +1,36 @@
 # Data Structures and Algorithms
 
-See [setup instructions](https://codefellows.github.io/setup-guide/code-301/3-code-challenges), in the Code 301 Setup Guide.
+|    ***Code 301 Code Challenges***	|   *13 Challenges*	|
+|---	|---    |
+|   [Code Challenge 01](https://github.com/BasharNofal/data-structures-and-algorithms/blob/master/code-challenges/challenges-01.test.js)	|   forEach	|
+|   [Code Challenge 02](https://github.com/BasharNofal/data-structures-and-algorithms/blob/master/code-challenges/challenges-02.test.js)	|   Pass by value, pass by reference	|
+|   [Code Challenge 03](https://github.com/BasharNofal/data-structures-and-algorithms/blob/master/code-challenges/challenges-03.test.js)	|   Sort	|
+|   [Code Challenge 04](https://github.com/BasharNofal/data-structures-and-algorithms/blob/master/code-challenges/challenges-04.test.js)	|   Regular expressions, part 1	|
+|   [Code Challenge 05](https://github.com/BasharNofal/data-structures-and-algorithms/blob/master/code-challenges/challenges-05.test.js)	|   Split, join, slice, splice   |
+|   [Code Challenge 06](https://github.com/BasharNofal/data-structures-and-algorithms/blob/master/code-challenges/challenges-06.test.js)	|   Object.keys, Object.values, Object.entries	|
+|   [Code Challenge 07](https://github.com/BasharNofal/data-structures-and-algorithms/blob/master/code-challenges/challenges-07.test.js)	|   Map	|
+|   [Code Challenge 08](https://github.com/BasharNofal/data-structures-and-algorithms/blob/master/code-challenges/challenges-08.test.js)	|    Filter	|
+|   [Code Challenge 09](https://github.com/BasharNofal/data-structures-and-algorithms/blob/master/code-challenges/challenges-09.test.js)	|   Reduce	|
+|   [Code Challenge 10](https://github.com/BasharNofal/data-structures-and-algorithms/blob/master/code-challenges/challenges-10.test.js)	|   Chaining methods	|
+|   [Code Challenge 11](https://github.com/BasharNofal/data-structures-and-algorithms/blob/master/code-challenges/challenges-11.test.js)	|   Regular expressions, part 2	|
+|   [Code Challenge 12](https://github.com/BasharNofal/data-structures-and-algorithms/blob/master/code-challenges/challenges-12.test.js)	|   Two-dimensional arrays	|
+|   [Code Challenge 13](https://github.com/BasharNofal/data-structures-and-algorithms/blob/master/code-challenges/challenges-13.test.js)	|   Includes, every, substring, charAt	|
 
-## Repository Quick Tour and Usage
+&nbsp;
 
-### 301 Code Challenges
-
-Under the `data-structures-and-algorithms` repository, at the top level is a folder called `code-challenges`
-
-Each day, you'll add one new file to this folder to do your work for the day's assigned code challenge
-
-### 401 Data Structures, Code Challenges
-
-- Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+|   ***Code 401 Code Challenges***	|   *	|
+|---	|---    |
+|   [Code Challenge 01](https://github.com/BasharNofal/data-structures-and-algorithms/tree/master/javascript/code-challenges/arrayReverse)	|   Array Reverse	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
+|   	|   	|
