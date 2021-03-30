@@ -20,4 +20,4 @@ For me that was the first idea that came to my mind and it's very simple and eas
 
 ## Solution
 
-![Whiteboard](../assets/array-shift-whiteboard.png)
+![Whiteboard](../assets/binary-search.png)
