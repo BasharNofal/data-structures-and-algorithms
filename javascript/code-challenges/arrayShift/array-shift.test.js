@@ -1,15 +1,6 @@
 'use strict';
 
-function insertShiftArray(array, value){
-    let newArray = [];
-    for (let counter = 0; counter < array.length; counter++) {
-        if (counter === Math.ceil(array.length / 2)) {
-            newArray.push(value);
-        }
-        newArray.push(array[counter]);
-    }
-    return newArray;
-};
+const insertShiftArray = require('./array-shift.js');
 
 describe('============SHIFT ARRAY FUNCTION============', () => {
     it('Inserts a value into the middle of an array', () => {
