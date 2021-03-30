@@ -1,3 +1,5 @@
+'use strict';
+
 const binarySearch = require('./array-binary-search.js')
 
 describe('================ARRAY BINARY SEARCH================', () => {

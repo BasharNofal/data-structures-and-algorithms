@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function binarySearch(array, num) {
 
     let startPoint = 0;
