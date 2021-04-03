@@ -18,4 +18,5 @@ I used a while loop which will compare the starting point of the array(at index 
 <hr>
 
 ## Solution
-<!-- Embedded whiteboard image -->
+
+![Whiteborad](../assets/binary-search.png)
