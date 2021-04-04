@@ -12,7 +12,7 @@ describe('===============Linked List===============', () => {
         expect(linkedList.head.next).toBeNull();
     });
 
-    it('Should add new node to the beginning of the linked list', ()  => {
+    it('Should add new node to the beginning of the linked list', () => {
         let secondValue = 10;
         let thirdValue = 15;
 
@@ -43,4 +43,26 @@ describe('===============Linked List===============', () => {
 
         expect(linkedList.toString()).toStrictEqual(`{ ${thirdValue} } -> { ${secondValue} } -> { ${firstValue} } -> NULL`);
     });
+
+    it('Should add new node at the end of the linked list', () => {
+        let forthValue = 20;
+        linkedList.append(forthValue);
+        expect(linkedList.head.next.next.next.value).toEqual(20);
+        expect(linkedList.head.next.next.next.next).toBeNull();
+    });
+
+    it('Should insert new node before the node whose value is sent', () => {
+        let newVal = 3;
+        linkedList.insertBefore(5, newVal);
+        // console.log(linkedList.head.next);
+        expect(linkedList.head.next.next.value).toEqual(3);
+        expect(linkedList.head.next.next.next.value).toEqual(5);
+    });
+
+    it('Should insert new node after the node whose value is sent', () => {
+        let newVal = 8;
+        linkedList.insertAfter(15, newVal);
+        expect(linkedList.head.next.value).toEqual(8);
+        expect(linkedList.head.next.next.value).toEqual(10);
+    })
 });
