@@ -16,6 +16,8 @@ The user can search for a certain value, if the value exists in the linked list 
 
 The user can display the linked lists as values and each value points at the next value.
 
+The user can add values at the end of the linked list, before certain node, and after certain node by giving the value of these nodes.
+
 <hr>
 
 ## Approach & Efficiency
@@ -24,7 +26,13 @@ For the first feature, I used if statement and what it will do if there was a he
 
 For the second feature, I used while loop to search for the value, the condition for the while loop is if the current value equals to null then exit the loop and if not keep looping, inside the loop itself I used if statement to compare the current value with the value that the user entered if there was a match then return true, if not, then make the current node the next of the current node.
 
-For the last feature, I used while loop to push the values inside of an array, the condition for the loop was the same as the second feature, once the loop is done then "NULL" will be push and I used join to return a string.
+For the third feature, I used while loop to push the values inside of an array, the condition for the loop was the same as the second feature, once the loop is done then "NULL" will be push and I used join to return a string.
+
+For the forth feature, I used while loop and the condition if the next value to the current node in null, then add the new node and make the next to the last old node the new node.
+
+For the fifth feature, I used if statement to check whether the entered value equals to the value of the header then call feature #1, else I used while loop and the condition if the value of the next to the current node is equal to the entered value by the user, then make the next to new node equals the next to the current node and make the next to the current node is the new node.
+
+For the last feature, I used the same while loop as feature five but the condition for the while loop is comparing the current node value to value that the user entered and the rest is the same as the fifth feature.
 
 ### Big O
 
@@ -35,4 +43,4 @@ For the last feature, I used while loop to push the values inside of an array, t
 
 ## Solution
 
-![Whiteborad](../assets/linked-list.png)
+![Whiteborad](../assets/linked-list2.png)
