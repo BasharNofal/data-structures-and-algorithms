@@ -71,10 +71,10 @@ describe('===============Linked List===============', () => {
     it('Should return node is number (times) before the last node', () => {
         singleNodeLL.insert(30);
 
-        expect(linkedList.farFromLast(linkedList.length)).toEqual(linkedList.head.value);
-        expect(linkedList.farFromLast(4)).toEqual(10);
-        expect(linkedList.farFromLast(0)).toEqual(20);
-        expect(singleNodeLL.farFromLast(0)).toEqual(30);
-        expect(singleNodeLL.farFromLast(100)).toEqual(`please, enter number is less that or equal to ${singleNodeLL.length}, and the number should be positive.`);
+        expect(linkedList.kthFromEnd(linkedList.length)).toEqual(linkedList.head.value);
+        expect(linkedList.kthFromEnd(4)).toEqual(10);
+        expect(linkedList.kthFromEnd(0)).toEqual(20);
+        expect(singleNodeLL.kthFromEnd(0)).toEqual(30);
+        expect(singleNodeLL.kthFromEnd(100)).toEqual(`please, enter number is less that or equal to ${singleNodeLL.length}, and the number should be positive.`);
     });
 });

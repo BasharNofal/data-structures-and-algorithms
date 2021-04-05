@@ -89,22 +89,22 @@ class LinkedList {
         current.next = newNode;
     }
 
-    farFromLast(times) {
+    kthFromEnd(k) {
         let current = this.head;
 
-        if (times < 0 || times > this.length) {
+        if (k < 0 || k > this.length) {
             return `please, enter number is less that or equal to ${this.length}, and the number should be positive.`;
         }
 
-        if (times === 0) {
+        if (k === 0) {
             while (current.next !== null) {
                 current = current.next;
             }
             return current.value;
         }
 
-        while(this.length - times){
-            times ++;
+        while(this.length - k){
+            k ++;
             // console.log(times,current);
             current = current.next;
         }
