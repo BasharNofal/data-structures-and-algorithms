@@ -2,6 +2,7 @@
 
 const LinkedList = require('../linked-list.js');
 let linkedList = new LinkedList();
+let singleNodeLL = new LinkedList();
 
 describe('===============Linked List===============', () => {
     it('Should initiate linked list', () => {
@@ -64,5 +65,16 @@ describe('===============Linked List===============', () => {
         linkedList.insertAfter(15, newVal);
         expect(linkedList.head.next.value).toEqual(8);
         expect(linkedList.head.next.next.value).toEqual(10);
-    })
+        expect(linkedList.length).toEqual(6);
+    });
+
+    it('Should return node is number (times) before the last node', () => {
+        singleNodeLL.insert(30);
+
+        expect(linkedList.farFromLast(linkedList.length)).toEqual(linkedList.head.value);
+        expect(linkedList.farFromLast(4)).toEqual(10);
+        expect(linkedList.farFromLast(0)).toEqual(20);
+        expect(singleNodeLL.farFromLast(0)).toEqual(30);
+        expect(singleNodeLL.farFromLast(100)).toEqual(`please, enter number is less that or equal to ${singleNodeLL.length}, and the number should be positive.`);
+    });
 });

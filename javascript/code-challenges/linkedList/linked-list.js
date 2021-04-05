@@ -10,9 +10,11 @@ class Node {
 class LinkedList {
     constructor() {
         this.head = null;
+        this.length = null;
     }
 
     insert(value) {
+        this.length++;
         let newNode = new Node(value);
         if (this.head) {
             newNode.next = this.head;
@@ -50,6 +52,7 @@ class LinkedList {
     }
 
     append(value) {
+        this.length++;
         let newNode = new Node(value);
         let current = this.head;
         while (current.next !== null) {
@@ -59,6 +62,7 @@ class LinkedList {
     }
 
     insertBefore(value, newValue) {
+        this.length++;
         let newNode = new Node(newValue);
         let current = this.head;
         if (this.head.value === value) {
@@ -75,13 +79,36 @@ class LinkedList {
     }
 
     insertAfter(value, newValue) {
+        this.length++;
         let newNode = new Node(newValue);
         let current = this.head;
         while (current.value !== value) {
             current = current.next;
         }
         newNode.next = current.next
-        current.next = newNode;        
+        current.next = newNode;
+    }
+
+    farFromLast(times) {
+        let current = this.head;
+
+        if (times < 0 || times > this.length) {
+            return `please, enter number is less that or equal to ${this.length}, and the number should be positive.`;
+        }
+
+        if (times === 0) {
+            while (current.next !== null) {
+                current = current.next;
+            }
+            return current.value;
+        }
+
+        while(this.length - times){
+            times ++;
+            // console.log(times,current);
+            current = current.next;
+        }
+        return current.value;
     }
 }
 
