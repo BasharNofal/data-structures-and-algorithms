@@ -103,8 +103,8 @@ class LinkedList {
             return current.value;
         }
 
-        while(this.length - k){
-            k ++;
+        while (this.length - k) {
+            k++;
             // console.log(times,current);
             current = current.next;
         }
