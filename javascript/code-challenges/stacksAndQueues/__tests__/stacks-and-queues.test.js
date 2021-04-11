@@ -8,13 +8,16 @@ describe('==================STACK==================', () => {
         let stack = new Stack()
         let firstValue = 5;
         let secondValue = 10;
+        let thirdValue = 15;
 
         stack.push(firstValue);
         stack.push(secondValue);
-
-        expect(stack.top.value).toEqual(secondValue);
-        expect(stack.top.next.value).toEqual(firstValue);
-        expect(stack.top.next.next).toBeNull();
+        stack.push(thirdValue);
+        console.log(stack.top.next)
+        expect(stack.top.value).toEqual(thirdValue);
+        expect(stack.top.next.value).toEqual(secondValue)
+        expect(stack.top.next.next.value).toEqual(firstValue);
+        expect(stack.top.next.next.next).toBeNull();
     });
 
     it('Should pop node from the stack', () => {
@@ -25,10 +28,10 @@ describe('==================STACK==================', () => {
         stack.push(firstValue);
         stack.push(secondValue);
 
-        let returnedValue = stack.pop();
+        let poppedNode = stack.pop();
 
         expect(stack.top.value).toEqual(firstValue);
-        expect(returnedValue.value).toEqual(secondValue);
+        expect(poppedNode.value).toEqual(secondValue);
         expect(stack.top.next).toBeNull();
         expect(emptyStack.pop()).toEqual('Stack is empty');
     });
@@ -85,9 +88,9 @@ describe('==================QUEUE==================', () => {
         let secondValue = 10; 
         queue.enqueue(firstValue);
         queue.enqueue(secondValue);
-        let returnedValue = queue.dequeue();
+        let dequeuedNode = queue.dequeue();
         
-        expect(returnedValue.value).toEqual(firstValue);
+        expect(dequeuedNode.value).toEqual(firstValue);
         expect(queue.front.value).toEqual(secondValue);
         expect(emptyQueue.dequeue()).toEqual('Queue is empty');
     });
