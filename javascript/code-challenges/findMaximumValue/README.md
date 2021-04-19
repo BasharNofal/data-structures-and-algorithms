@@ -12,7 +12,8 @@
 
 ## Approach & Efficiency
 
-* I used the pre-order function to get the values of each node in the tree into an array (order doesn't matter) then I used a loop to compare each element in the array with the value of a variable called max which was defined with initial value of the first element in the array. 
+* I used the pre-order function to get the values of each node in the tree into an array (order doesn't matter).
+* then I used a loop to compare each element in the array with the value of a variable called max which was defined with initial value of the first element in the array. 
  
 ### Big O
 
@@ -23,4 +24,4 @@
 
 ## Solution
 
-![Whiteborad](../assets/find-maximum-value.png)
+![Whiteborad](../assets/find-maximum-value-in-binary-tree.png)
