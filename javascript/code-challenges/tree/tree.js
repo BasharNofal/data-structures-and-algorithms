@@ -8,6 +8,45 @@ class Node {
     }
 }
 
+class Queue {
+    constructor() {
+        this.front = null;
+        this.back = null;
+    }
+
+    enqueue(node) {
+        if (this.front) {
+            if (this.front === this.back) {
+                this.front.next = node;
+                this.back = node;
+            } else {
+                this.back.next = node;
+                this.back = node;
+            }
+        } else {
+            this.front = node;
+            this.back = this.front;
+        }
+    }
+
+    dequeue() {
+        if (this.front && this.front.next) {
+            let oldFront = this.front;
+            this.front = this.front.next;
+            oldFront.next = null;
+            return oldFront;
+        }
+
+        if (this.front) {
+            let oldFront = this.front;
+            this.front = null;
+            return oldFront;
+        }
+
+        return 'Queue is empty';
+    }
+}
+
 class BinaryTree {
     constructor(root = null) {
         this.root = root;
@@ -45,6 +84,25 @@ class BinaryTree {
         _traverse(this.root);
         return array;
     }
+
+    breadthFirst() {
+        let array = [];
+        let queue = new Queue();
+  
+        queue.enqueue(this.root);
+        console.log(this);
+        
+        while(queue.front) {
+          if(queue.front.left) {
+            queue.enqueue(queue.front.left);
+          }
+          if(queue.front.right) {
+            queue.enqueue(queue.front.right);
+          }
+          array.push(queue.dequeue().value);
+        }
+        return array;
+      }
 }
 
 class BinarySearchTree {

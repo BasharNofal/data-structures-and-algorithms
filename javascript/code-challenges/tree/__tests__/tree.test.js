@@ -5,36 +5,42 @@ const { Node, BinaryTree, BinarySearchTree } = require('../tree.js');
 describe('=================BINARY TREE=================', () => {
     let binaryTree;
     beforeAll(() => {
-        let n1 = new Node(1);
-        let n2 = new Node(2);
-        let n3 = new Node(3);
-        let n4 = new Node(4);
-        let n5 = new Node(5);
-        let n6 = new Node(6);
-        let n7 = new Node(7);
-        let n8 = new Node(8);
+        let n1 = new Node(2);
+        let n2 = new Node(7);
+        let n3 = new Node(5);
+        let n4 = new Node(2);
+        let n5 = new Node(6);
+        let n6 = new Node(9);
+        let n7 = new Node(5);
+        let n8 = new Node(11);
+        let n9 = new Node(4);
 
         n1.left = n2;
         n1.right = n3;
         n2.left = n4;
         n2.right = n5;
-        n3.left = n6;
-        n3.right = n7;
-        n4.left = n8;
+        n3.right = n6;
+        n5.left = n7;
+        n5.right = n8;
+        n6.left = n9;
 
         binaryTree = new BinaryTree(n1);
     });
 
-    it('Should return the value for each node in the tree in \"Pre-Order\"', () => {
-        expect(binaryTree.preOrder()).toEqual([1, 2, 4, 8, 5, 3, 6, 7]);
+    it('Should return the value for each node in the tree in \"Pre-Order\" traversal', () => {
+        expect(binaryTree.preOrder()).toEqual([2, 7, 2, 6, 5, 11, 5, 9, 4]);
     });
 
-    it('Should return the value for each node in the tree in \"In-Order\"', () => {
-        expect(binaryTree.inOrder()).toEqual([8, 4, 2, 5, 1, 6, 3, 7]);
+    it('Should return the value for each node in the tree in \"In-Order\" traversal', () => {
+        expect(binaryTree.inOrder()).toEqual([2, 7, 5, 6, 11, 2, 5, 4, 9]);
     });
 
-    it('Should return the value for each node in the tree in \"Post-Order\"', () => {
-        expect(binaryTree.postOrder()).toEqual([8, 4, 5, 2, 6, 7, 3, 1]);
+    it('Should return the value for each node in the tree in \"Post-Order\" traversal', () => {
+        expect(binaryTree.postOrder()).toEqual([2, 5, 11, 6, 7, 4, 9, 5, 2]);
+    });
+
+    it('Should return an array with values of each node in the tree in \"Depth First\ traversal"', () => {
+        expect(binaryTree.breadthFirst()).toEqual([2, 7, 5, 2, 6, 9, 5, 11, 4]);
     });
 });
 
@@ -69,7 +75,7 @@ describe('=================BINARY SEARCH TREE=================', () => {
         binarySearchTree.add(firstValue);
         binarySearchTree.add(secondValue);
         binarySearchTree.add(thirdValue);
-        
+
         expect(binarySearchTree.root.left.left.left.right.value).toEqual(firstValue);
         expect(binarySearchTree.root.right.right.right.value).toEqual(secondValue);
         expect(binarySearchTree.root.left.left.left.right.right.value).toEqual(thirdValue);
