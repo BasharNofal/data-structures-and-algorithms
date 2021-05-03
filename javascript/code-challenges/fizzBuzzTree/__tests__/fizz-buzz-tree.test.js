@@ -22,9 +22,9 @@ describe('==================FIZZ BUZZ TREE==================', () => {
 
         let kAryTree = new KAryTree(n1);
         let newKAryTree = new KAryTree();
-
+        
         newKAryTree.fizzBuzzTree(kAryTree);
-
+        console.log(newKAryTree);
         expect(newKAryTree.root.children[0].value).toEqual('Fizz');
         expect(newKAryTree.root.children[0].children[0].value).toEqual('Fizz');
         expect(newKAryTree.root.children[1].children[0].value).toEqual('Buzz');
