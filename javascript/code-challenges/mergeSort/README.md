@@ -1,6 +1,6 @@
-# Tree
+# Merge Sort
 
-* **Merge Sort** algorithm is basically dividing the array into multiple arrays with single element, then sorting these small arrays by comparing each one to the next array, each iteration the resultant array will be sorted two times longer than the previous one (it will be a combination of the two previous "small" arrays).  
+* **Merge sort** algorithm is basically dividing the array into multiple arrays with single element, then sorting these small arrays by comparing each one to the next array, each iteration the resultant array will be sorted two times longer than the previous one (it will be a combination of the two previous "small" arrays).  
 
 <hr>
 
