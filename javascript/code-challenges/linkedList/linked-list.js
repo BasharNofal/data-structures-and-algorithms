@@ -26,9 +26,7 @@ class LinkedList {
 
     includes(num) {
         let current = this.head;
-        // console.log(current);
         while (current !== null) {
-            // console.log('=======CURRENT VALUE', current.value);
             if (current.value === num) {
                 return true;
             } else {
@@ -43,7 +41,6 @@ class LinkedList {
         let arrOfValues = [];
 
         while (current !== null) {
-            // console.log(current);
             arrOfValues.push(`{ ${current.value} }`);
             current = current.next;
         }
@@ -54,11 +51,15 @@ class LinkedList {
     append(value) {
         this.length++;
         let newNode = new Node(value);
-        let current = this.head;
-        while (current.next !== null) {
-            current = current.next;
+        if (!this.head) {
+            this.head = newNode;
+        } else {
+            let current = this.head;
+            while (current.next !== null) {
+                current = current.next;
+            }
+            current.next = newNode;
         }
-        current.next = newNode;
     }
 
     insertBefore(value, newValue) {
@@ -71,10 +72,8 @@ class LinkedList {
             while (current.next.value !== value) {
                 current = current.next;
             }
-            // console.log(current.next);
             newNode.next = current.next;
             current.next = newNode;
-            // console.log(current)
         }
     }
 
@@ -105,7 +104,6 @@ class LinkedList {
 
         while (this.length - k) {
             k++;
-            // console.log(times,current);
             current = current.next;
         }
         return current.value;
