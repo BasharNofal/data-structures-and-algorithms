@@ -72,7 +72,6 @@ class HashTable {
         }
         return 'Key was not found';
     }
-
 }
 
 module.exports = HashTable;
