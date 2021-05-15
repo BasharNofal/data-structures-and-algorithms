@@ -33,6 +33,4 @@ Assuming there were two values with the same key, simply we use linked lists to 
 
 ## Solution
 
-### Whiteboard
-
 ![Whiteborad](../assets/hashtable.png)
