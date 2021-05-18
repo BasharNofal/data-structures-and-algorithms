@@ -1,5 +1,7 @@
 'use strict';
 
+'use strict';
+
 class Node {
     constructor(value) {
         this.value = value;
@@ -26,16 +28,6 @@ class LinkedList {
             current.next = newNode;
         }
     }
-
-    values() {
-        let arrOfValues = [];
-        let current = this.head;
-        for (let index = 0; index < this.length; index++) {
-            arrOfValues.push(current.value.value);
-            current = current.next;
-        }
-        return arrOfValues;
-    }
 }
 
 class HashTable {
@@ -57,21 +49,31 @@ class HashTable {
         }
         return hash;
     }
-
-    contains(key) {
-        let hash = this.getHash(key);
-        if (this.table[hash]) {
-            return true;
-        }
-        return false
-    }
-
-    find(key) {
-        if (this.contains(key)) {
-            return this.table[this.getHash(key)].values();
-        }
-        return 'Key was not found';
-    }
 }
 
-module.exports = HashTable;
+function leftJoin(firstTable, SecondTable) {
+    let thirdHashTable = new HashTable();
+
+    for (let i = 0; i < firstTable.table.length; i++) {
+        if (firstTable.table[i]) {
+            thirdHashTable.table[i] = firstTable.table[i];
+
+            let firstTableKey = firstTable.table[i].head.value.key;
+            let secondTableHash = SecondTable.getHash(firstTableKey);
+            
+            if (SecondTable.table[secondTableHash]) {
+                let current = thirdHashTable.table[i].head;
+                while (current.next) {
+                    current = current.next;
+                }
+                current.next = SecondTable.table[secondTableHash].head;
+            } else {
+                let hash = firstTable.table[i].head.value.key;
+                thirdHashTable.add(hash, "NULL");
+            }
+        }
+    }
+    return thirdHashTable;
+}
+
+module.exports = {leftJoin, HashTable};
